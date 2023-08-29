@@ -24,15 +24,16 @@
 
         #end {
             position: absolute;
-            left: 1450px;
-            bottom: 10px;
-            width: 250px;
-            height: 50px;
-            transform: rotate(90deg) !important;
+            left: 90%; /* Adjust the position as needed */
+            bottom: 15%; /* Adjust the position as needed */
+            width: 10%; /* Adjust the width as needed */
+            height: 5%; /* Adjust the height as needed */
+            transform: rotate(90deg);
         }
         
         #status {
             text-align: center;
+            font-size: 80px;
             animation: blink 1s infinite; /* Animation name, duration, and iteration */
         }
 
@@ -57,8 +58,8 @@
 <body>
     <div id="game-container">
         <h2 id="status" style="text-align:center;"></h2>
-        <p id="carId"></p>
-        <p id="endId"></p>
+        <h2 style="text-align:center; text-decoration: underline;">Level 01</h2>
+
         <img id="car" src="car.png" alt="Car">
         <img id="end" src="end.png" alt="End">
     </div>
@@ -91,6 +92,9 @@
                     break;
             }
 
+            // Ensure the car stays within the screen boundaries
+            carX = Math.max(0, Math.min(100 - (car.width / window.innerWidth * 100), carX));
+            carY = Math.max(0, Math.min(100 - (car.height / window.innerHeight * 100), carY));
 
             // Update the car's position
             car.style.left = carX + "%";
@@ -98,7 +102,7 @@
 
             // Check for collision between car and end point
             if (checkCollision(car, end)) {
-                document.getElementById("status").innerHTML = "You have won!"
+                document.getElementById("status").innerHTML = "You have won!";
             }
         });
 
