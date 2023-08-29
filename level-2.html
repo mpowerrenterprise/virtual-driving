@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #car {
+            width: 120px;
+            height: 100px;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+
+        #end {
+            position: absolute;
+            left: 1450px;
+            bottom: 700px;
+            width: 250px;
+            height: 50px;
+            transform: rotate(90deg) !important;
+        }
+        
+        #status {
+            text-align: center;
+            animation: blink 1s infinite; /* Animation name, duration, and iteration */
+        }
+
+        #boomb{
+            position: absolute;
+            left: 800px;
+            bottom: 500px;
+            width: 150px;
+            height: 150px;
+        }
+
+          /* Define the blink animation */
+          @keyframes blink {
+            0% {
+                opacity: 0; /* Start with invisible */
+                color: blue;
+            }
+            50% {
+                opacity: 1; /* Fully visible */
+                color: green;
+            }
+            100% {
+                opacity: 0; /* End with invisible */
+                color: red;
+            }
+        }
+    </style>
+    <title>Car Game</title>
+</head>
+<body>
+    <div id="game-container">
+        <h2 id="status" style="text-align:center;"></h2>
+        <p id="carId"></p>
+        <p id="endId"></p>
+        <img id="car" src="car.png" alt="Car">
+        <img id="end" src="end.png" alt="End">
+        <img id="boomb" src="boomb.png" alt="End">
+    </div>
+
+    <script>
+        const car = document.getElementById("car");
+        const end = document.getElementById("end");
+
+        const boomb = document.getElementById("boomb");
+
+        // Set initial position of the car
+        let carX = 5; // in percentage (50%)
+        let carY = 80; // in percentage (90%)
+        
+        car.style.left = carX + "%";
+        car.style.bottom = carY + "%";
+
+        // Move the car
+        document.addEventListener("keydown", (event) => {
+            switch (event.key) {
+                case "ArrowUp":
+                    carY += 5;
+                    break;
+                case "ArrowDown":
+                    carY -= 5;
+                    break;
+                case "ArrowLeft":
+                    carX -= 5;
+                    break;
+                case "ArrowRight":
+                    carX += 5;
+                    break;
+            }
+
+
+            // Update the car's position
+            car.style.left = carX + "%";
+            car.style.bottom = carY + "%";
+
+            // Check for collision between car and end point
+            if (checkCollision(car, end)) {
+                document.getElementById("status").innerHTML = "You have won!"
+            }
+
+             // Check for collision between car and end point
+             if (checkCollision(car, boomb)) {
+                document.getElementById("status").innerHTML = "Game Over"
+            }
+        });
+
+        // Function to check for collision between two elements
+        function checkCollision(element1, element2) {
+            const rect1 = element1.getBoundingClientRect();
+            const rect2 = element2.getBoundingClientRect();
+
+            return (
+                rect1.left < rect2.right && rect1.right > rect2.left && rect1.top < rect2.bottom && rect1.bottom > rect2.top
+            );
+        }
+    </script>
+</body>
+</html>

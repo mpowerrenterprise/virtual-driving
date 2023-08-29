@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
         }
 
         #car {
-            width: 110px;
+            width: 120px;
             height: 100px;
             position: absolute;
             transform: translateX(-50%);
@@ -27,16 +26,39 @@
             position: absolute;
             left: 1450px;
             bottom: 10px;
-            width: 100px;
-            height: 100px;
+            width: 250px;
+            height: 50px;
             transform: rotate(90deg) !important;
+        }
+        
+        #status {
+            text-align: center;
+            animation: blink 1s infinite; /* Animation name, duration, and iteration */
+        }
+
+          /* Define the blink animation */
+          @keyframes blink {
+            0% {
+                opacity: 0; /* Start with invisible */
+                color: blue;
+            }
+            50% {
+                opacity: 1; /* Fully visible */
+                color: green;
+            }
+            100% {
+                opacity: 0; /* End with invisible */
+                color: red;
+            }
         }
     </style>
     <title>Car Game</title>
 </head>
-
 <body>
     <div id="game-container">
+        <h2 id="status" style="text-align:center;"></h2>
+        <p id="carId"></p>
+        <p id="endId"></p>
         <img id="car" src="car.png" alt="Car">
         <img id="end" src="end.png" alt="End">
     </div>
@@ -48,6 +70,7 @@
         // Set initial position of the car
         let carX = 5; // in percentage (50%)
         let carY = 80; // in percentage (90%)
+        
         car.style.left = carX + "%";
         car.style.bottom = carY + "%";
 
@@ -68,20 +91,26 @@
                     break;
             }
 
-            // Ensure the car stays within the game container
-            carX = Math.max(0, Math.min(100, carX));
-            carY = Math.max(0, Math.min(100, carY));
 
             // Update the car's position
             car.style.left = carX + "%";
             car.style.bottom = carY + "%";
 
-            // Check if the car has reached the end
-            if (carX <= 10 && carY <= 10) {
-                alert("You win!");
+            // Check for collision between car and end point
+            if (checkCollision(car, end)) {
+                document.getElementById("status").innerHTML = "You have won!"
             }
         });
+
+        // Function to check for collision between two elements
+        function checkCollision(element1, element2) {
+            const rect1 = element1.getBoundingClientRect();
+            const rect2 = element2.getBoundingClientRect();
+
+            return (
+                rect1.left < rect2.right && rect1.right > rect2.left && rect1.top < rect2.bottom && rect1.bottom > rect2.top
+            );
+        }
     </script>
 </body>
-
 </html>
