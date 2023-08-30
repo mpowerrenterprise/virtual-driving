@@ -31,6 +31,7 @@ It serves as a captivating example of how innovation can reshape the way we inte
 - HTML
 - CSS
 - JavaScript
+- TensorFlow
 - Keras
 - OpenCV
 - Numpy
@@ -48,9 +49,39 @@ This repo's source folder has three sub-projects: Virtual Driving, Tank Game, an
 
 **Note:** The Virtual Driving Prototype triggers the arrow keys (Up, Down, Left, Right) according to the webcam inputs; this prototype can be used for any purpose that needs to trigger arrow keys; it could also be applied to different games.
 
+### Setup Tank Game and Football Game
+
+**Note:** To set up the Tank Game and Football Game, there is no need for any installation. These games can be readily accessed within a web browser without requiring a web server by simply clicking the "level-1.html" file.
+
+### Setup Virtual Driving Prototype
+
+**Note:** To set it up, installing Python along with the requisite libraries is necessary. After successfully installing Python, the following steps should be followed to install the required libraries.
+
+```
+pip install tensorflow
+```
+
+```
+pip install keras
+```
+
+```
+pip install opencv-python
+```
+
+```
+pip install keyboard
+```
+
 ### Car Steering Input Image (Joystick)
 
 ![IMAGE](docs/github-readme-content/car-steering.jpg)
+
+**Note:** This image of a car steering wheel can be rotated to activate arrow keys.
+
+## Demonstration
+
+![IMAGE](docs/github-readme-content/demo.gif)
 
 ## Guide for AI Model Training (Techable Machine)
 
@@ -75,10 +106,6 @@ It is recognizing objects in images, identifying sounds, or classifying data. Te
 ![IMAGE](docs/github-readme-content/3.jpg)
 
 **Note:** After that, other steps are self-explanatory: create classes according to the needs; then add data to the relevant classes and click train to start the training process. Apart from this, advanced settings can be changed to improve performance and accuracy. The model can be uploaded online or downloaded locally; it also provides basic code to infer the model in Python, a Web App (TensorFlow | TensorFlowJS | TensorFlow Litte).
-
-## Demonstration
-
-![IMAGE](docs/github-readme-content/demo.gif)
 
 ## Social Links
 
