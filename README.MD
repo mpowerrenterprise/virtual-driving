@@ -1,0 +1,57 @@
+# Face Mask Classifier
+
+## Repo Structure
+
+```
+    ├── docs                  # Contains project-related documents.
+    ├── research              # Contains pre-research experiments.
+    │   ├── pre-prototype       # Contains pre-prototype (basic project).
+    │   ├── model.zip           # Contains trained model.
+    ├── source                # Contains main source code.
+    └── README.MD             # Contains GitHub Readme Content.
+
+```
+
+## Introduction
+
+## Technology Stack
+
+## Setup
+
+## Guide for AI Model Training (Techable Machine)
+
+Teachable Machine is an innovative web-based platform developed by Google that empowers individuals, regardless of their coding experience, to delve into machine learning and artificial intelligence. This intuitive tool is a gateway for beginners and enthusiasts, allowing them to train their machine-learning models without extensive programming knowledge.
+
+It is recognizing objects in images, identifying sounds, or classifying data. Teachable Machine simplifies the process by providing a user-friendly interface that enables users to teach their models through a simple demonstration process easily. This democratization of machine learning is transforming how people interact with AI, making it accessible and understandable to a broader audience and fostering creativity and innovation across various domains.
+
+**Step 01:** Go to (https://teachablemachine.withgoogle.com)
+
+**Step 02:** Click “Get Started Button”:
+
+![IMAGE](docs/github-readme-content/1.jpg)
+
+**Step 03:** Select “Image Project” and choose “Standard Image Model”:
+
+![IMAGE](docs/github-readme-content/2.jpg)
+
+**Step 04:** Collect Dataset
+
+**Step 05:** Start Training
+
+![IMAGE](docs/github-readme-content/3.jpg)
+
+**Note:** After that, other steps are self-explanatory: create classes according to the needs; then add data to the relevant classes and click train to start the training process. Apart from this, advanced settings can be changed to improve performance and accuracy. The model can be uploaded online or downloaded locally; it also provides basic code to infer the model in Python, a Web App (TensorFlow | TensorFlowJS | TensorFlow Litte).
+
+## Demonstration
+
+![IMAGE](docs/github-readme-content/demo.gif)
+
+## Social Links
+
+- [Linkedin Profile](https://www.linkedin.com/in/gunarakulangunaretnam)
+- [Facebook Profile](https://www.facebook.com/gunarakulangunaratnam)
+- [Instagram Profile](https://www.instagram.com/gunarakulangunaretnam)
+- [Twitter Profile ](https://twitter.com/gunarakulangr)
+- [Kaggle Profile](https://www.kaggle.com/gunarakulangr)
+- [TikTok Profile](https://www.tiktok.com/@gunarakulangunaretnam)
+- [Youtube Profile](https://www.youtube.com/channel/UCMWkED5sabgVZSCKjZuRJXA)
