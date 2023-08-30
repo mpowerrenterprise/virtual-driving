@@ -1,22 +1,52 @@
-# Face Mask Classifier
+# Virtual Driving
 
 ## Repo Structure
 
 ```
     ├── docs                  # Contains project-related documents.
     ├── research              # Contains pre-research experiments.
-    │   ├── pre-prototype       # Contains pre-prototype (basic project).
-    │   ├── model.zip           # Contains trained model.
+    │   ├── 0-pre-prototype       # Contains pre-prototype (basic project).
+    │   ├── 1-model.zip           # Contains trained model.
     ├── source                # Contains main source code.
+    │   ├── 0-vr-driver           # Contains virtual driving app.
+    │   ├── 1-tank-game           # Contains a web-based tank driving game.
+    │   ├── 2-football-game       # Contains a web-based football game.
     └── README.MD             # Contains GitHub Readme Content.
 
 ```
 
 ## Introduction
 
+The Virtual Driving Prototype is an innovative project that bridges the physical and virtual worlds using computer vision technology; a sheet of paper can be transformed into a joystick to control the game through a webcam, which helps to enhance the gaming experience, allowing players to control in-game vehicles with surprising precision.
+
+The paper steering wheel becomes a tangible interface through the magic of computer vision and a standard webcam, bridging the gap between the player's physical actions and the virtual world on their screen.
+
+It serves as a captivating example of how innovation can reshape the way we interact with and enjoy video games, offering a glimpse into the future of gaming experiences that are both entertaining and innovative.
+
+**Note:** This AI model was trained with TechableMachine, a No-Code AI platform used for educational purposes. However, it is not suitable for production or enterprise purposes due to its lower performance quality.
+
 ## Technology Stack
 
+- Python
+- HTML
+- CSS
+- JavaScript
+- Keras
+- OpenCV
+- Numpy
+- Keyboard
+
 ## Setup
+
+This repo's source folder has three sub-projects: Virtual Driving, Tank Game, and Football Game.
+
+**Virtual Driving:** The Python prototype detects the car steering angles in the paper sheet through the webcam and triggers the arrow keys accordingly.
+
+**Tank Game:** A simple web-based game written in HTML, CSS, and JavaScript to test the virtual driving prototype; the game's concept is to reach the end line without touching bombs (enemies). This game only uses arrow key inputs to negative.
+
+**Football Game:** A simple web-based game written in HTML, CSS, and JavaScript to test the virtual driving prototype; the game's concept is to move the ball to the goalpost without touching opposing players.
+
+**Note:** The Virtual Driving Prototype triggers the arrow keys (Up, Down, Left, Right) according to the webcam inputs; this prototype can be used for any purpose that needs to trigger arrow keys; it could also be applied to different games.
 
 ## Guide for AI Model Training (Techable Machine)
 
