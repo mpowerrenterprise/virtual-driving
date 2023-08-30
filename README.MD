@@ -89,7 +89,13 @@ python main.py
 
 ## Demonstration
 
-![IMAGE](docs/github-readme-content/demo.gif)
+### Tank Game using Virtual Driving
+
+![IMAGE](docs/github-readme-content/demo-1.gif)
+
+### Football Game using Virtual Driving
+
+![IMAGE](docs/github-readme-content/demo-2.gif)
 
 ## Guide for AI Model Training (Techable Machine)
 
