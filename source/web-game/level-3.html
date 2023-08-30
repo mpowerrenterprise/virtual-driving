@@ -166,24 +166,24 @@
           isPlaying = false;
         }
 
-        // Check for collision between car and end point
-        if (checkCollision(car, bomb1)) {
+        function gameOver(){
+
           document.getElementById("status").innerHTML = "Game Over";
           document.getElementById("next-level-btn").innerHTML = "Try Again!";
           document.getElementById("next-level-btn").href = "level-3.html";
           document.getElementById("next-level-btn").style.display = "block";
-
           isPlaying = false;
+
+        }
+
+        // Check for collision between car and end point
+        if (checkCollision(car, bomb1)) {
+          gameOver()
         }
 
         // Check for collision between car and end point
         if (checkCollision(car, bomb2)) {
-          document.getElementById("status").innerHTML = "Game Over";
-          document.getElementById("next-level-btn").innerHTML = "Try Again!";
-          document.getElementById("next-level-btn").href = "level-3.html";
-          document.getElementById("next-level-btn").style.display = "block";
-
-          isPlaying = false;
+          gameOver()
         }
       });
 
