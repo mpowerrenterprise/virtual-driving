@@ -48,6 +48,10 @@ This repo's source folder has three sub-projects: Virtual Driving, Tank Game, an
 
 **Note:** The Virtual Driving Prototype triggers the arrow keys (Up, Down, Left, Right) according to the webcam inputs; this prototype can be used for any purpose that needs to trigger arrow keys; it could also be applied to different games.
 
+### Car Steering Input Image (Joystick)
+
+![IMAGE](docs/github-readme-content/car-steering.jpg)
+
 ## Guide for AI Model Training (Techable Machine)
 
 Teachable Machine is an innovative web-based platform developed by Google that empowers individuals, regardless of their coding experience, to delve into machine learning and artificial intelligence. This intuitive tool is a gateway for beginners and enthusiasts, allowing them to train their machine-learning models without extensive programming knowledge.
