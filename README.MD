@@ -79,6 +79,14 @@ pip install keyboard
 
 **Note:** This image of a car steering wheel can be rotated to activate arrow keys.
 
+## Execution
+
+**Note:** To run the project, visit the following directory: "virtual-driving\source\0-vr-driver" and run the below command.
+
+```
+python main.py
+```
+
 ## Demonstration
 
 ![IMAGE](docs/github-readme-content/demo.gif)
