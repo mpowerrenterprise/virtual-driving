@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        #next-level-btn {
+            font-size: 3.7rem; /* Increase font size for a bigger button */
+            padding: 10px 20px; /* Add padding for some extra size */
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Text color */
+            border: none; /* Remove the default button border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        #next-level-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #ball {
+            width: 110px;
+            height: 70px;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+
+        #post {
+            
+            position: absolute;
+            left: 85%; /* Adjust the position as needed */
+            bottom: 40%; /* Adjust the position as needed */
+            width: 10%; /* Adjust the width as needed */
+            height: 30%; /* Adjust the height as needed */
+        }
+
+        #def1{
+            width: 100px; 
+            height:100px;
+            position: relative;
+            left: 800px;
+            top: 120px;
+        }
+
+        #def2{
+            width: 100px; 
+            height:100px;
+            position: relative;
+            left: 300px;
+            top: 270px;
+        }
+        
+        #status {
+            text-align: center;
+            font-size: 80px;
+            animation: blink 1s infinite; /* Animation name, duration, and iteration */
+        }
+
+          /* Define the blink animation */
+          @keyframes blink {
+            0% {
+                opacity: 0; /* Start with invisible */
+                color: blue;
+            }
+            50% {
+                opacity: 1; /* Fully visible */
+                color: green;
+            }
+            100% {
+                opacity: 0; /* End with invisible */
+                color: red;
+            }
+        }
+    </style>
+    <title>Football game Level 03</title>
+</head>
+<body>
+    <div id="game-container">
+        <h2 id="status" style="text-align:center;"></h2>
+        <h2 style="text-align:center; text-decoration: underline;">Level 03</h2>
+
+        <div class="button-container">
+            <a href="level-3.html" style="display: none;" id="next-level-btn">Next Level</a>
+        </div>
+
+        <img id="ball" src="ball.png" alt="ball">
+        <img id="post" src="post.png" alt="post">
+
+        <img id="def1" src="def1.png" alt="post">
+
+        <img id="def2" src="def2.png" alt="post">
+    </div>
+
+    <script>
+
+        var isPlaying = true;
+
+        const ball = document.getElementById("ball");
+        const post = document.getElementById("post");
+
+        const def1 = document.getElementById("def1");
+
+        const def2 = document.getElementById("def2");
+
+        // Set initial position of the ball
+        let ballX = 5; // in percentage (50%)
+        let ballY = 80; // in percentage (90%)
+        
+        ball.style.left = ball + "%";
+        ball.style.bottom = ball + "%";
+
+        // Move the ball
+        document.addEventListener("keydown", (event) => {
+            if(isPlaying == true){
+                switch (event.key) {
+                    case "ArrowUp":
+                        ballY += 5;
+                        break;
+                    case "ArrowDown":
+                        ballY -= 5;
+                        break;
+                    case "ArrowLeft":
+                        ballX -= 5;
+                        break;
+                    case "ArrowRight":
+                        ballX += 5;
+                        break;
+                }
+            }
+
+            // Ensure the ball stays within the screen boundaries
+            ballX = Math.max(0, Math.min(100 - (ball.width / window.innerWidth * 100), ballX));
+            ballY = Math.max(0, Math.min(100 - (ball.height / window.innerHeight * 100), ballY));
+
+            // Update the ball's position
+            ball.style.left = ballX + "%";
+            ball.style.bottom = ballY + "%";
+
+            // Check for collision between ball and post point
+            if (checkCollision(ball, post)) {
+                document.getElementById("status").innerHTML = "Goal!!!";
+                isPlaying = false;
+            }
+
+             // Check for collision between ball and post point
+             if (checkCollision(ball, def1)) {
+                document.getElementById("status").innerHTML = "Game Over";
+                document.getElementById("next-level-btn").innerHTML = "Try Again!";
+                document.getElementById("next-level-btn").href = "level-3.html";
+                document.getElementById("next-level-btn").style.display = "block";
+                
+                isPlaying = false;
+            }
+
+              // Check for collision between car and post point
+              if (checkCollision(ball, def2)) {
+                document.getElementById("status").innerHTML = "Game Over";
+                document.getElementById("next-level-btn").innerHTML = "Try Again!";
+                document.getElementById("next-level-btn").href = "level-3.html";
+                document.getElementById("next-level-btn").style.display = "block";
+                
+                isPlaying = false;
+            }
+        });
+
+        // Function to check for collision between two elements
+        function checkCollision(element1, element2) {
+            const rect1 = element1.getBoundingClientRect();
+            const rect2 = element2.getBoundingClientRect();
+
+            return (
+                rect1.left < rect2.right && rect1.right > rect2.left && rect1.top < rect2.bottom && rect1.bottom > rect2.top
+            );
+        }
+    </script>
+</body>
+</html>
