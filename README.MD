@@ -112,11 +112,11 @@ pip install keyboard
 
 ![IMAGE](docs/github-readme-content/demo-2.gif)
 
-## Guide for AI Model Training (Techable Machine)
+## Train AI models with the Teachable Machine.
 
-Teachable Machine is an innovative web-based platform developed by Google that empowers individuals, regardless of their coding experience, to delve into machine learning and artificial intelligence. This intuitive tool is a gateway for beginners and enthusiasts, allowing them to train their machine-learning models without extensive programming knowledge.
+Teachable Machine is a Low-Code-AI tool that helps to train simple AI models to recognize images, sounds, & poses without coding experience. This tool is a gateway for beginners and enthusiasts, allowing them to train simple machine-learning models without extensive programming knowledge.
 
-It is recognizing objects in images, identifying sounds, or classifying data. Teachable Machine simplifies the process by providing a user-friendly interface that enables users to teach their models through a simple demonstration process easily. This democratization of machine learning is transforming how people interact with AI, making it accessible and understandable to a broader audience and fostering creativity and innovation across various domains.
+**Note:** Teachable Machine is not a good tool for developing enterprise applications; it can be used only for simple models and education purposes.
 
 **Step 01:** Go to (https://teachablemachine.withgoogle.com)
 
@@ -134,7 +134,7 @@ It is recognizing objects in images, identifying sounds, or classifying data. Te
 
 ![IMAGE](docs/github-readme-content/3.jpg)
 
-**Note:** After that, other steps are self-explanatory: create classes according to the needs; then add data to the relevant classes and click train to start the training process. Apart from this, advanced settings can be changed to improve performance and accuracy. The model can be uploaded online or downloaded locally; it also provides basic code to infer the model in Python, a Web App (TensorFlow | TensorFlowJS | TensorFlow Litte).
+**Note:** After that, other steps are self-explanatory: create classes according to your needs; then add data to the relevant classes and click train to start the training process. Apart from this, advanced settings can be changed to improve performance and accuracy. The model can be uploaded online or downloaded locally; it also provides basic code to infer the model in Python, a Web App (TensorFlow | TensorFlowJS | TensorFlow Litte).
 
 ## Social Links
 
