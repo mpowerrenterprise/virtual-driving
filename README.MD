@@ -81,11 +81,26 @@ pip install keyboard
 
 ## Execution
 
-**Note:** To run the project, visit the following directory: "virtual-driving\source\0-vr-driver" and run the below command.
+**Note:** To run the project, visit the following directory: "virtual-driving\source\0-vr-driver" and run the below command
 
-```
-python main.py
-```
+- Step 01: Navigate to the following directory
+    ```
+        virtual-driving\source\0-vr-driver
+    ```
+
+- Step 02: Run the app
+    ```
+        python main.py
+    ```
+
+- Step 03: Please open a game that can be played using arrow keys.
+    ```
+        Game Folder: virtual-driving/source
+            - Game 1: 1-tank-game
+            - Game 2: 2-football-game
+    ```
+
+**Note:** You can play any game that requires arrow keys. Two games are included in the source folder.
 
 ## Demonstration
 
